@@ -1,0 +1,34 @@
+<!--EXERCISE 2-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h1>Full Menu</h1>
+    <h2>Mains</h2>
+    <% RESTAURANT.menu.forEach((cat) => { %>
+        <% if (cat.category === "mains") { %>
+                <h3><%= cat.name %></h3>
+                <p>Price - $<%= cat.price %><br>Rating - <%= cat.rating %> Stars<br><%= cat.details %></p> 
+        <% } %>
+    <% }) %>
+    <h2>Sides</h2>
+    <% RESTAURANT.menu.forEach((cat) => { %>
+        <% if (cat.category === "sides") { %>
+                <h3><%= cat.name %></h3>
+                <p>Price - $<%= cat.price %><br>Rating - <%= cat.rating %> Stars<br><%= cat.details %></p> 
+        <% } %>
+    <% }) %>
+    <h2>Desserts</h2>
+    <% RESTAURANT.menu.forEach((cat) => { %>
+        <% if (cat.category === "desserts") { %>
+                <h3><%= cat.name %></h3>
+                <p>Price - $<%= cat.price %><br>Rating - <%= cat.rating %> Stars<br><%= cat.details %></p> 
+        <% } %>
+    <% }) %>
+</body>
+</html>

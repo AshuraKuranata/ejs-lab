@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= caps%> Menu</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h1><%= caps%> Menu</h1>
+    <% RESTAURANT.menu.forEach((cat) => { %>
+        <% if (cat.category === menuCategory) { %>
+                <% if(cat.rating === 5) { %>
+                    <h2>⭐<%= cat.name %></h2>
+                <% } else { %>
+                    <h2><%= cat.name %></h2>
+                <% } %>
+                <p>Price - $<%= cat.price %><br>Rating - <%= cat.rating %> Stars<br><%= cat.details %></p>
+    <% } %>
+    <% }) %>
+
+</body>
+</html>
